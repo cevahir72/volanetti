@@ -17,6 +17,9 @@ export const metadata: Metadata = {
   description: "Manufacturing Excellence for the Architectural Avant-Garde.",
 };
 
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -30,7 +33,11 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="font-body-md antialiased min-h-full flex flex-col">{children}</body>
+      <body className="font-body-md antialiased min-h-full flex flex-col selection:bg-secondary selection:text-on-secondary">
+        <Navbar />
+        <main className="flex-grow">{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }

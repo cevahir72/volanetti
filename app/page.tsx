@@ -2,211 +2,173 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { LineRevealText } from "@/components/LineRevealText";
-import {
-  luxuryFadeUp,
-  luxuryStaggerContainer,
-  slideInLeft,
-  luxuryEase,
-} from "@/lib/animations";
+import { useState } from "react";
+
+const luxuryEase = [0.16, 1, 0.3, 1];
+
+const fadeUp = {
+  initial: { opacity: 0, y: 30 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, margin: "-100px" },
+  transition: { duration: 0.8, ease: luxuryEase }
+};
+
+const staggerContainer = {
+  initial: {},
+  whileInView: { transition: { staggerChildren: 0.1 } },
+  viewport: { once: true }
+};
 
 export default function Home() {
   return (
-    <>
-      {/* Top Navigation Shell */}
-      <nav className="bg-background/80 dark:bg-background/80 docked full-width top-0 sticky z-50 backdrop-blur-xl border-b border-secondary/10">
-        <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex justify-between items-center h-20">
-          <div className="text-headline-md font-headline-md tracking-tight text-on-surface dark:text-on-surface">
-            VOLANETTI
-          </div>
-          <div className="hidden md:flex gap-8 items-center">
-            <Link className="text-on-surface-variant dark:text-on-surface-variant hover:text-secondary dark:hover:text-secondary hover:underline transition-all duration-300 text-label-caps font-label-caps" href="/fabric-studio">Fabric Studio</Link>
-            <Link className="text-on-surface-variant dark:text-on-surface-variant hover:text-secondary dark:hover:text-secondary transition-colors duration-300 text-label-caps font-label-caps" href="#">Wood Works</Link>
-            <Link className="text-on-surface-variant dark:text-on-surface-variant hover:text-secondary dark:hover:text-secondary transition-colors duration-300 text-label-caps font-label-caps" href="#">Our Craft</Link>
-            <Link className="text-on-surface-variant dark:text-on-surface-variant hover:text-secondary dark:hover:text-secondary transition-colors duration-300 text-label-caps font-label-caps" href="#">Contact</Link>
-          </div>
-          <button className="bg-secondary text-on-secondary px-6 py-2.5 text-label-caps font-label-caps hover:opacity-90 transition-all duration-200">
-            Request Quote
-          </button>
-        </div>
-      </nav>
-
+    <div className="bg-background text-on-background min-h-screen">
       <main>
-        {/* Hero Section: Full-screen Split Layout */}
-        <section className="flex flex-col md:flex-row h-screen min-h-[700px] w-full overflow-hidden">
-          {/* Left Side: Fabric Studio */}
-          <div className="group relative flex-1 h-1/2 md:h-full hero-split-hover bg-cover bg-center" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuAlE_DhdpgiS204cg2ssaaPpUsIFLR0mWzJp2dHBBy07dh5rWSmmNE0wpd_039o3Rb1V3lftTRbxNdaOssy9cjvrux35rPCTs2Y__zNIgYVabUIVM89JKtJIy2YJPnFG6Uyfp8cT9RyMdzXEHOrU5wBf_McHU2HSOUW_NXUqkNm2MGHFeOXe6FI6VBQ9zVJ6mlYi-nGKmAkHLn0_-3ILtJjAyYG4F7w5Sr40tiVsomd3vRk-em2qUq_YSWXLJ8-VKxtEkfMam0T7Dzz')" }}>
-            <div className="absolute inset-0 bg-primary-container/40 group-hover:bg-primary-container/60 transition-all duration-500"></div>
+        {/* Hero Section */}
+        <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
+          {/* Full Height Background Image */}
+          <div className="absolute inset-0 z-0">
+            <motion.img 
+              initial={{ scale: 1.1 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 2, ease: luxuryEase }}
+              alt="Volanetti Emerald Velvet Drapery" 
+              className="w-full h-full object-cover" 
+              src="https://lh3.googleusercontent.com/aida/ADBb0ujFXZV9B2XPh1h5lkcDEbTTtJRvodXZ-ynJwyMzzKxyS8QOzlAfZXKd-VoYedGUjSVaX2alI_Epr1sywqa4Dhs9PoQFjIcfQ4NxMuQgG7oQYOdujMtYwrGmpiQqbxqrpA7t0rNpEEvsdjEN_M3F5kLHyWRjQHKbkIgs4JYT4T_GWefWZVn6WijDW1eZjywYpi78sGTq95IDjMwIzFssJkPSrL4FAeeHDFa77n5X3s9APa6UKjueo7r1doQ"
+            />
+            {/* Tonal Layering Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-r from-primary-container/95 via-primary-container/40 to-transparent"></div>
+          </div>
+
+          <div className="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop w-full grid grid-cols-12 gap-8">
             <motion.div 
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2, ease: luxuryEase }}
-              className="relative h-full flex flex-col items-center justify-center p-12 text-center"
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, delay: 0.5, ease: luxuryEase }}
+              className="col-span-12 md:col-span-8 lg:col-span-7 flex flex-col items-start justify-center"
             >
-              <h2 className="text-on-surface font-display-lg text-display-lg-mobile md:text-display-lg mb-8 drop-shadow-lg">Fabric Studio</h2>
-              <div className="overlay flex flex-col items-center gap-6">
-                <Link href="/fabric-studio" className="border border-secondary text-secondary px-12 py-4 text-label-caps font-label-caps hover:bg-secondary hover:text-on-secondary transition-all duration-300 inline-block">
-                  Enter
+              <span className="font-label-caps text-secondary tracking-[0.3em] mb-6 block uppercase">Bespoke Fabrication</span>
+              <h1 className="font-display-lg text-display-lg-mobile md:text-display-lg text-on-background mb-8 leading-[1.1]">
+                Handcrafted Drapery.<br/>
+                <span className="italic font-medium">Exclusive to the Trade.</span>
+              </h1>
+              <p className="font-body-lg text-on-surface-variant max-w-lg mb-8">
+                Velvet & Linen Curtains <span className="text-secondary mx-2">|</span> Custom Sizing <span className="text-secondary mx-2">|</span> Wholesale Pricing
+              </p>
+              <div className="flex flex-wrap gap-4 mb-10">
+                <Link href="/fabric-studio" className="px-6 py-2 bg-secondary/10 border border-secondary/30 text-secondary font-label-caps uppercase tracking-widest hover:bg-secondary hover:text-primary-container transition-all backdrop-blur-sm">
+                  Fabric Studio
+                </Link>
+                <Link href="/wood-works" className="px-6 py-2 bg-white/5 border border-white/10 text-on-surface-variant font-label-caps uppercase tracking-widest hover:border-secondary hover:text-secondary transition-all backdrop-blur-sm">
+                  Wood Works
+                </Link>
+              </div>
+              <div className="flex flex-wrap gap-6">
+                <button className="bg-secondary text-on-secondary-fixed font-label-caps px-10 py-5 hover:bg-secondary-fixed-dim transition-all shadow-lg">
+                  Request Trade Access
+                </button>
+                <Link href="/collections" className="hairline-border text-on-background font-label-caps px-10 py-5 hover:bg-white/5 transition-all text-center">
+                  View Catalog
                 </Link>
               </div>
             </motion.div>
           </div>
+        </section>
 
-          {/* Right Side: Wood Works */}
-          <div className="group relative flex-1 h-1/2 md:h-full hero-split-hover bg-cover bg-center" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuAsuqy8c6S71_2gUXC66fWHz_NQgr259ELA4Qw5wYwyw2T4Xvh5m34Yf6sqXWR1OmU6Jl8d5l47YmnSCIUczhTZ1XSsUKHjw7VQSoTo_kEPevhguqPJfM_E2LaFb5JkzIz5E93SQg_Czdq6qZeN6Hg_XjS1LcC0b7Bef2t4RWiY3Y2ELYyokq05P0N8o6HMkkut5_vtyPjPcU27kGNYFtctKvPrrzVlBSXVlUPIiuCdmArRboGGDJCCpbhtI_P8xWQWOGMm7rtbaO9W')" }}>
-            <div className="absolute inset-0 bg-primary-container/30 group-hover:bg-primary-container/50 transition-all duration-500"></div>
-            <motion.div 
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4, ease: luxuryEase }}
-              className="relative h-full flex flex-col items-center justify-center p-12 text-center"
-            >
-              <h2 className="text-on-surface font-display-lg text-display-lg-mobile md:text-display-lg mb-8 drop-shadow-lg">Wood Works</h2>
-              <div className="overlay flex flex-col items-center gap-6">
-                <button className="border border-secondary text-secondary px-12 py-4 text-label-caps font-label-caps hover:bg-secondary hover:text-on-secondary transition-all duration-300">
-                  Enter
-                </button>
+        {/* Technical Mastery Section */}
+        <section className="bg-surface-container-lowest py-32 border-t border-secondary/10">
+          <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+            <div className="flex flex-col md:flex-row gap-12 lg:gap-20 items-center">
+              {/* Detail Showcase Image */}
+              <motion.div {...fadeUp} className="w-full md:w-1/2">
+                <div className="relative group overflow-hidden hairline-border rounded-lg">
+                  <img 
+                    className="w-full h-[500px] lg:h-[600px] object-cover transition-transform duration-1000 group-hover:scale-105" 
+                    alt="Macro close-up of emerald velvet"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZm1e8z4HQF8c6IDE2ebU2Txkq8CFN9VmRbpb6Eitq6hUrWWtdUDx4TsBM-Sjtn5_0NUkPIOBCXY6X8zOgD4idxseDSGWRHvhR2_fAPhxk02mCS3YLftgyEj-c-5A3c89SkkmLGjWf6i17QiaRY9l64er3lsivwe4HuvOxPUldQsOzUEB2eiWY71g48psHAhmEWq39dNZ_qmJp2AJYM3DJNd9OXy3pxvIL5an3-Q4jrIx8cLR3xToi0L-s6DTt5iVj8Yh86mj6_hL0"
+                  />
+                  <div className="absolute bottom-0 left-0 bg-primary-container/80 backdrop-blur-md p-6 md:p-8 w-full md:w-3/4 hairline-border border-b-0 border-l-0">
+                    <h3 className="font-headline-md text-secondary mb-2">Technical Mastery</h3>
+                    <p className="font-body-md text-on-surface-variant">Precision engineered for the most demanding interior environments.</p>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Specification Grid */}
+              <div className="w-full md:w-1/2 grid grid-cols-1 gap-10 lg:gap-12 md:pl-8 lg:pl-12">
+                {[
+                  { label: "Weight", value: "540 g/m²", desc: "Industrial grade density ensuring elegant drape and durability.", icon: "balance" },
+                  { label: "Opacity", value: "Blackout Grade", desc: "Zero light penetration for high-end hospitality and residential suites.", icon: "dark_mode" },
+                  { label: "Material", value: "100% Belgian Linen", desc: "Sustainably sourced fibers woven in the historic Flanders region.", icon: "eco" }
+                ].map((spec, i) => (
+                  <motion.div 
+                    key={i}
+                    variants={fadeUp}
+                    initial="initial"
+                    whileInView="whileInView"
+                    className="border-b border-on-surface/10 pb-6"
+                  >
+                    <div className="flex justify-between items-baseline">
+                      <h4 className="font-label-caps text-secondary uppercase mb-2">{spec.label}</h4>
+                      <span className="material-symbols-outlined text-secondary text-[20px]">{spec.icon}</span>
+                    </div>
+                    <p className="font-headline-md text-on-surface">{spec.value}</p>
+                    <p className="font-body-md text-on-surface-variant mt-2">{spec.desc}</p>
+                  </motion.div>
+                ))}
               </div>
-            </motion.div>
+            </div>
           </div>
         </section>
 
-        {/* Brand Narrative Section */}
-        <section className="bg-primary-container py-32 md:py-48">
-          <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
-            <motion.div 
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, margin: "-100px" }}
-              variants={luxuryStaggerContainer}
-              className="grid md:grid-cols-12 gap-12 items-end"
-            >
-              <motion.div variants={luxuryFadeUp} className="md:col-span-7">
-                <span className="text-secondary font-label-caps text-label-caps mb-6 block">ESTABLISHED EXCELLENCE</span>
-                <LineRevealText
-                  text="Manufacturing Excellence for the Architectural Avant-Garde."
-                  className="text-on-surface font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-8 leading-tight"
-                  tag="h2"
-                />
-              </motion.div>
-              <motion.div variants={luxuryFadeUp} className="md:col-span-5 pb-2">
-                <p className="text-on-primary-container font-body-lg text-body-lg leading-relaxed max-w-prose">
-                  Volanetti stands at the intersection of industrial precision and artisanal heritage. We provide high-end B2B solutions for developers and designers who demand the tactile luxury of custom fabrications with the reliability of master-scale manufacturing.
-                </p>
-              </motion.div>
-            </motion.div>
-
-            {/* B2B Feature Grid */}
-            <motion.div 
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, margin: "-100px" }}
-              variants={luxuryStaggerContainer}
-              className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-8"
-            >
-              {[
-                { icon: "architecture", title: "Architectural Spec", desc: "Meticulously engineered materials ready for technical integration into luxury developments and commercial spaces." },
-                { icon: "precision_manufacturing", title: "Bespoke Scalability", desc: "From single custom pieces to full-suite hospitality contracts, we maintain rigorous quality standards at every volume." },
-                { icon: "handshake", title: "Partner Relations", desc: "Dedicated account managers and technical support for architects, interior designers, and high-end developers." }
-              ].map((item, i) => (
-                <motion.div key={i} variants={luxuryFadeUp} className="border border-secondary/20 p-8 bg-surface-container-lowest transition-all hover:border-secondary/40 hover:-translate-y-2">
-                  <span className="material-symbols-outlined text-secondary text-4xl mb-6" data-icon={item.icon}>{item.icon}</span>
-                  <h3 className="text-on-surface font-headline-md text-headline-md mb-4">{item.title}</h3>
-                  <p className="text-on-surface-variant font-body-md text-body-md">{item.desc}</p>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Technical Excellence Detail (Editorial Showcase) */}
-        <section className="bg-surface py-32 border-t border-secondary/10 overflow-hidden">
-          <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
-            <div className="flex flex-col md:flex-row gap-20 items-center">
+        {/* Signature Collections (Bento Style) */}
+        <section className="py-32 px-margin-mobile md:px-margin-desktop bg-background">
+          <div className="max-w-container-max mx-auto">
+            <div className="grid grid-cols-12 gap-6 lg:gap-8 auto-rows-[300px]">
               <motion.div 
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true, margin: "-100px" }}
-                variants={slideInLeft}
-                className="w-full md:w-1/2 aspect-square bg-surface-container-low overflow-hidden relative"
+                {...fadeUp}
+                className="col-span-12 md:col-span-8 relative overflow-hidden hairline-border rounded-xl row-span-2 group"
               >
                 <img 
-                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" 
-                  alt="A detailed macro shot of a precision joinery technique" 
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBA9eahz8H6R51IKDtFKXja4X2AT5JnDa89sHBu8Td2o16vT5hmhwnSMpIashbjmN8FMEIs7hfD8SWrjTDMQDsbyNvwb2X3ineA4LEaCLtQzh8G2azwdaHc5VKQR7pH74neIB7uKIV7mdxL0xJM7w9yd_hQS48vQJ7QETFR8pw_9YpFRm1t8Oi6d94ZqiCiDfTbxA6yoAysFfNa-qfuG2qjoRR7Rnrsu866BF7UeRxHLYkVhGab9fe3g26v98aoUPPu0FJxrnJoYA2e" 
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" 
+                  alt="Atelier Collection Showcase"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_pc-zhVa09Ho-CsyCVd4g3ZRDwXX5pyGlKaKteROut-FJfetY1t6NeSOXD0x01t4d-UP7QpOyNrhMAE4em-Dth-D3UI6XxJqKahZ6cUQWVRwwLxLa9FCGYFhJCWbdPySHrrzyO4VdVPRyNitHW5KvuHqm7obCTII26adM8SGQZv-K17Ecl9r8lTh5JBuFtjd8bp2WInfj9jr_ULeY9-7rpr1FUwTEC5wbttSDLV1mRTb1WIVeOvusmz-Tw-HiDEBVQ39nT3stqy8L"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60"></div>
+                <div className="absolute bottom-8 md:bottom-12 left-8 md:left-12">
+                  <h2 className="font-headline-lg text-3xl md:text-5xl mb-4 text-on-background">The Atelier Collection</h2>
+                  <Link href="/collections" className="text-secondary font-label-caps flex items-center gap-2 group-hover:gap-4 transition-all">
+                    Explore Selection <span className="material-symbols-outlined">arrow_forward</span>
+                  </Link>
+                </div>
               </motion.div>
+
               <motion.div 
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true, margin: "-100px" }}
-                variants={luxuryStaggerContainer}
-                className="w-full md:w-1/2"
+                {...fadeUp}
+                className="col-span-12 md:col-span-4 bg-primary-container p-8 md:p-10 flex flex-col justify-end hairline-border rounded-xl"
               >
-                <motion.h2 variants={luxuryFadeUp} className="text-on-surface font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-8">
-                  The Material Integrity Manifesto
-                </motion.h2>
-                <ul className="space-y-6">
-                  {[
-                    { num: "01", title: "Sourcing Ethics", desc: "FSC-certified timbers and sustainably harvested natural fibers from European mills." },
-                    { num: "02", title: "Technical Tolerance", desc: "Precision milling with tolerances within 0.5mm for seamless architectural installation." },
-                    { num: "03", title: "Performance Testing", desc: "All textiles meet high-traffic contract rub counts and international fire safety standards." },
-                  ].map((item, i) => (
-                    <motion.li key={i} variants={luxuryFadeUp} className="flex gap-4 border-b border-on-surface/10 pb-4">
-                      <span className="text-secondary font-label-caps text-label-caps">{item.num}</span>
-                      <div>
-                        <h4 className="text-on-surface font-label-caps text-label-caps mb-1 uppercase">{item.title}</h4>
-                        <p className="text-on-surface-variant text-body-md">{item.desc}</p>
-                      </div>
-                    </motion.li>
-                  ))}
-                </ul>
+                <h3 className="font-headline-md text-secondary mb-4">Contract Solutions</h3>
+                <p className="font-body-md text-on-surface-variant mb-6">Optimized workflows for large-scale development projects and commercial interiors.</p>
+                <Link href="#" className="font-label-caps border-b border-secondary/40 self-start pb-1 hover:border-secondary transition-colors">Learn More</Link>
+              </motion.div>
+
+              <motion.div 
+                {...fadeUp}
+                className="col-span-12 md:col-span-4 relative overflow-hidden hairline-border rounded-xl group"
+              >
+                <img 
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
+                  alt="Hardware Systems Detail"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8pRDc8IAuJ0Z-DIjINFZwlG1PugUuzge6Q36QsJ6QX3hAh08holaa578LsG6M2S0VWXvqCF_UtCASozIY7DucQJX7eIjJz257t5drzo2ln6xFV7w7i96LWguAkuT-NdU2nk9est-2u7sKgJFvDzTAs_cVbu5mtxNQ723XsUX9SK1YwVyyqU6_g8h2gQRuxRV3x6G6NBW0TKumQEyIWLAdSkP_TfnicAzGWL-xVuyLpLGQQDukBemPbOsGboRN_mR43MRrI4lY3BqM"
+                />
+                <div className="absolute inset-0 bg-background/30 group-hover:bg-background/20 transition-colors"></div>
+                <div className="absolute bottom-6 left-6">
+                  <h4 className="font-label-caps tracking-widest text-on-background">Hardware Systems</h4>
+                </div>
               </motion.div>
             </div>
           </div>
         </section>
       </main>
-
-      {/* Footer Shell */}
-      <footer className="bg-surface-container-lowest dark:bg-surface-container-lowest full-width border-t border-secondary/20">
-        <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-20 flex flex-col gap-12">
-          <div className="flex flex-col md:flex-row justify-between items-start gap-12">
-            <div className="text-headline-md font-headline-md text-on-surface dark:text-on-surface">
-              VOLANETTI
-              <p className="text-label-caps font-label-caps text-on-surface-variant mt-2 tracking-widest">MANUFACTURING HOUSE</p>
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-12">
-              <div className="flex flex-col gap-4">
-                <span className="text-secondary font-label-caps text-label-caps mb-2">SOLUTIONS</span>
-                <Link className="text-on-surface-variant hover:text-secondary hover:underline underline-offset-4 transition-all duration-300 text-body-md" href="#">Fabric Studio</Link>
-                <Link className="text-on-surface-variant hover:text-secondary hover:underline underline-offset-4 transition-all duration-300 text-body-md" href="#">Wood Works</Link>
-                <Link className="text-on-surface-variant hover:text-secondary hover:underline underline-offset-4 transition-all duration-300 text-body-md" href="#">Custom Projects</Link>
-              </div>
-              <div className="flex flex-col gap-4">
-                <span className="text-secondary font-label-caps text-label-caps mb-2">TECHNICAL</span>
-                <Link className="text-on-surface-variant hover:text-secondary hover:underline underline-offset-4 transition-all duration-300 text-body-md" href="#">Sustainability</Link>
-                <Link className="text-on-surface-variant hover:text-secondary hover:underline underline-offset-4 transition-all duration-300 text-body-md" href="#">Technical Specs</Link>
-                <Link className="text-on-surface-variant hover:text-secondary hover:underline underline-offset-4 transition-all duration-300 text-body-md" href="#">Certifications</Link>
-              </div>
-              <div className="flex flex-col gap-4">
-                <span className="text-secondary font-label-caps text-label-caps mb-2">COMPANY</span>
-                <Link className="text-on-surface-variant hover:text-secondary hover:underline underline-offset-4 transition-all duration-300 text-body-md" href="#">Privacy Policy</Link>
-                <Link className="text-on-surface-variant hover:text-secondary hover:underline underline-offset-4 transition-all duration-300 text-body-md" href="#">LinkedIn</Link>
-                <Link className="text-on-surface-variant hover:text-secondary hover:underline underline-offset-4 transition-all duration-300 text-body-md" href="#">Instagram</Link>
-              </div>
-            </div>
-          </div>
-          <div className="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-secondary/10">
-            <p className="text-label-caps font-label-caps text-on-surface-variant text-center md:text-left">
-              © 2024 VOLANETTI MANUFACTURING EXCELLENCE. ALL RIGHTS RESERVED.
-            </p>
-            <div className="flex gap-8 mt-6 md:mt-0">
-              <span className="material-symbols-outlined text-secondary cursor-pointer hover:opacity-70 transition-opacity" data-icon="language">language</span>
-              <span className="material-symbols-outlined text-secondary cursor-pointer hover:opacity-70 transition-opacity" data-icon="share">share</span>
-            </div>
-          </div>
-        </div>
-      </footer>
-    </>
+    </div>
   );
 }
