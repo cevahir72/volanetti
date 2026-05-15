@@ -20,11 +20,11 @@ export default function ShelvesCollectionPage() {
         <section className="relative min-h-[70vh] flex flex-col justify-center items-center text-center px-margin-mobile md:px-margin-desktop overflow-hidden">
           <div className="absolute inset-0 z-0">
             <motion.img 
-              initial={{ scale: 1.1, opacity: 0.3 }}
-              animate={{ scale: 1, opacity: 0.3 }}
+              initial={{ scale: 1.1, opacity: 0.85 }}
+              animate={{ scale: 1, opacity: 0.85 }}
               transition={{ duration: 2, ease: luxuryEase }}
               className="w-full h-full object-cover" 
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzXy00uvR4lnHB2DTtmzroWEOoBbC2tGixYQlhEKZN_at91-sO3HYG0sCZ6s4Mduo3bFzmoAx0LS_T5X4L1R4WCuI7dCJ9A8SbcScyKhEPoyCmBdo8aq86BHub5zUUw88tR1YtWgXmJ4XhW4PdyN43BmHQaPDKXEYdyXrf5kDOzDMdkEU-cNYZvrPr7dquyAYvx4gArevgIuHPhcJSp7eUccfrpnBzBXOub9tL3-RoSZipeJEc3218De-nDP_k_Jf-ILS9ws0jFvp_"
+              src="/shelf.png"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background"></div>
           </div>

@@ -20,13 +20,13 @@ export default function OfficeCollectionPage() {
         <section className="relative h-[80vh] w-full flex items-center justify-start overflow-hidden">
           <div className="absolute inset-0 z-0">
             <motion.img 
-              initial={{ scale: 1.1 }}
-              animate={{ scale: 1 }}
+              initial={{ scale: 1.1, opacity: 0.95 }}
+              animate={{ scale: 1, opacity: 0.95 }}
               transition={{ duration: 2, ease: luxuryEase }}
               className="w-full h-full object-cover" 
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8ARH4YThnII_E9_QhFHRqWwjhcq946DOWc7bI6ZTTNQesxadSIykgJ3hEHPBq-ZhGzNNefi9FiOPvHQ6VSL5NlnGq_5ZqeeMe8BLr8sVcowbl5Z29HxVpe088hDs5vXQRCLqEQxnafYWWFO90Vy4JrjQ3UKLxmT_ZtGfJiLoDdQPNkFQOlFsQzS7IMW2BYuphuADdJjfTN6OeAiWY0D5rekq59D4d9DpczCrsDHVGVe7OPoaCQTqZgawUDli_1VTa9Kr6-HsYR3d-"
+              src="/office.png"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-background via-background/60 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-background/60 via-background/20 to-transparent"></div>
           </div>
           <div className="relative z-10 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
             <motion.div
@@ -103,13 +103,13 @@ export default function OfficeCollectionPage() {
 
             <motion.div {...fadeUp} className="md:col-span-12 lg:col-span-8 group relative overflow-hidden bg-surface-container-low border border-secondary/10 rounded-xl p-1 shadow-2xl">
               <div className="grid grid-cols-1 md:grid-cols-2 h-full">
-                <div className="aspect-square overflow-hidden h-full">
+                <div className="aspect-square overflow-hidden h-full relative z-0">
                   <img 
                     className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-105" 
                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQqWvWLcDo4IS-OVmRK8iFKsfqs92xR209_9H4AbK8kQSPdHCdFZrub6e4C3Dv5HCdpWFvWUsNZaQBDgixK-ZpsvrC2fBrAauMShKDGe-ULCdNnxYjW0JPYboJDt48xpDoIwpD8l9KSRwUYVU6hNhGs9Icy5rDg3rd8WPsdLXQHAQCYYVhlQdny_fH_FieMX1TUvbulI59LOfyGhkDfonrAa8wY-_B1Jdh8utnGnCFFKGGUhV3LrcqRm7ibUrYEwURVwE7wpDZGA_W"
                   />
                 </div>
-                <div className="p-8 md:p-10 flex flex-col justify-center">
+                <div className="p-8 md:p-10 flex flex-col justify-center relative z-10 bg-surface-container-low">
                   <h3 className="font-headline-md text-xl md:text-2xl text-secondary mb-4">Oval Walnut Desk with Black Epoxy River</h3>
                   <div className="h-px bg-gradient-to-r from-transparent via-secondary/40 to-transparent mb-6"></div>
                   <p className="text-on-surface-variant font-body-md leading-relaxed text-sm">

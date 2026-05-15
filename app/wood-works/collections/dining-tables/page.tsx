@@ -20,14 +20,14 @@ export default function DiningTablesPage() {
         <section className="relative h-[70vh] flex items-center overflow-hidden">
           <div className="absolute inset-0 z-0 bg-primary-container">
             <motion.img 
-              initial={{ scale: 1.1, opacity: 0.4 }}
-              animate={{ scale: 1, opacity: 0.4 }}
+              initial={{ scale: 1.1, opacity: 0.85 }}
+              animate={{ scale: 1, opacity: 0.85 }}
               transition={{ duration: 2, ease: luxuryEase }}
               alt="Dining Tables Hero" 
               className="w-full h-full object-cover" 
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAB3z0IhEDXTApsYe8Mn2q-fdGnR8mdICMJNRjQAqSrCfy6_qngP7Kggd34znrwVCZtDY11qitH-40AnynxFxwLiT5VLHtSNNp9jdEAa_hZc_j7-w7Tr0IVb_B49culwuTNgsTAR_vixrwXRDL2a9BdN0OfxOmT29yDi7Nw9K38jE-1OMh6ouOD_3ceAh3Tlq0k4fvOeyR9O9hYUVvitnDRm3dVq_FKPJn3Pd9rpTz6XyCkik185ylgw-7uw5gmsUUVEVN0FIdPzKU7"
+              src="/dining.png"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-background via-background/60 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-background/50 via-background/20 to-transparent"></div>
           </div>
           <div className="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop w-full">
             <motion.div
@@ -40,6 +40,12 @@ export default function DiningTablesPage() {
               <h1 className="font-display-lg text-4xl md:text-7xl text-on-background mb-8">Dining Tables</h1>
               <div className="w-24 h-1 bg-secondary"></div>
             </motion.div>
+          </div>
+
+          {/* Scroll Indicator */}
+          <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-secondary/60">
+            <span className="font-label-caps text-[10px] uppercase tracking-[0.3em]">Scroll to Explore</span>
+            <span className="material-symbols-outlined animate-bounce">expand_more</span>
           </div>
         </section>
 

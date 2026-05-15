@@ -20,11 +20,11 @@ export default function LivingRoomCollectionPage() {
         <header className="relative h-[70vh] flex flex-col items-center justify-center text-center px-margin-mobile md:px-margin-desktop overflow-hidden">
           <div className="absolute inset-0 z-0">
             <motion.img 
-              initial={{ scale: 1.1, opacity: 0.4 }}
-              animate={{ scale: 1, opacity: 0.4 }}
+              initial={{ scale: 1.1, opacity: 0.85 }}
+              animate={{ scale: 1, opacity: 0.85 }}
               transition={{ duration: 2, ease: luxuryEase }}
-              className="w-full h-full object-cover grayscale" 
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4wIF6ig5sjNatf5zds110L1e04lapT3l3I11jQYUOJCYUvwlN-tQWsCzIyai9nxjL6RQWAtnJIcUjPJ61Ztap1wHjcxQ0Ov9XM6eTm8-Z-OGREqVIPsGd7UVW9S-IgT6BueNPr4vyme0w7FY7F0KAVHC5t4XHnOYl21st5j9XdN_PKeiHI8IuNP4P-5ZV5QaRKeWzRZEy5RaDC4JKIR1LJl_8LifslJkvR7Py5a9rhwgVYbL7zwh64P0y_q0l_FUtXyxjdeZOHH91"
+              className="w-full h-full object-cover" 
+              src="/living.png"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
           </div>
