@@ -21,7 +21,7 @@ export default function ContactPage() {
 
   const handleWhatsAppSend = (e: React.FormEvent) => {
     e.preventDefault();
-    const phoneNumber = "9727741001";
+    const phoneNumber = "19727741001";
     const text = `Hello John,\nMy name is ${formData.fullName},\nEmail: ${formData.email}\n\n${formData.message}`;
     const encodedText = encodeURIComponent(text);
     window.open(`https://wa.me/${phoneNumber}?text=${encodedText}`, "_blank");
@@ -86,7 +86,7 @@ export default function ContactPage() {
               <h3 className="font-headline-md text-secondary">Contact John</h3>
               <p className="font-body-md text-on-surface-variant">
                 john@volanetti.com<br />
-                972-774-1001
+                +1 972-774-1001
               </p>
             </div>
           </motion.div>
