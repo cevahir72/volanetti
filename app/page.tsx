@@ -157,7 +157,7 @@ export default function Home() {
                 <img 
                   className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" 
                   alt="Atelier Collection Showcase"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_pc-zhVa09Ho-CsyCVd4g3ZRDwXX5pyGlKaKteROut-FJfetY1t6NeSOXD0x01t4d-UP7QpOyNrhMAE4em-Dth-D3UI6XxJqKahZ6cUQWVRwwLxLa9FCGYFhJCWbdPySHrrzyO4VdVPRyNitHW5KvuHqm7obCTII26adM8SGQZv-K17Ecl9r8lTh5JBuFtjd8bp2WInfj9jr_ULeY9-7rpr1FUwTEC5wbttSDLV1mRTb1WIVeOvusmz-Tw-HiDEBVQ39nT3stqy8L"
+                  src="/drape.png"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60"></div>
                 <div className="absolute bottom-8 md:bottom-12 left-8 md:left-12">
