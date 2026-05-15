@@ -7,7 +7,7 @@ import React from "react";
 interface LineRevealTextProps {
   text: string;
   className?: string;
-  tag?: keyof JSX.IntrinsicElements;
+  tag?: keyof React.JSX.IntrinsicElements;
   containerClassName?: string;
   staggerDelay?: number;
 }
@@ -20,7 +20,7 @@ interface LineRevealTextProps {
 export function LineRevealText({
   text,
   className = "",
-  tag: Tag = "h2" as keyof JSX.IntrinsicElements,
+  tag: Tag = "h2" as keyof React.JSX.IntrinsicElements,
   containerClassName = "",
   staggerDelay = 0.1,
 }: LineRevealTextProps) {
@@ -85,7 +85,7 @@ export function LineRevealText({
 export function InlineLineRevealText({
   text,
   className = "",
-  tag: Tag = "p" as keyof JSX.IntrinsicElements,
+  tag: Tag = "p" as keyof React.JSX.IntrinsicElements,
   containerClassName = "",
 }: Omit<LineRevealTextProps, "staggerDelay">) {
   return (

@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 
-const luxuryEase = [0.16, 1, 0.3, 1];
+const luxuryEase = [0.16, 1, 0.3, 1] as [number, number, number, number];
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
