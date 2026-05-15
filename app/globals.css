@@ -64,6 +64,9 @@
     background-color: var(--color-background);
     color: var(--color-on-background);
   }
+  button {
+    cursor: pointer;
+  }
 }
 
 @layer utilities {

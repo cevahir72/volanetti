@@ -15,6 +15,7 @@ export default function Navbar() {
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
+    <>
     <header className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-secondary/20 h-20">
       <nav className="flex justify-between items-center max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop h-full">
         {/* Logo Left */}
@@ -58,70 +59,71 @@ export default function Navbar() {
         <div className="flex md:hidden items-center">
           <button 
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="text-secondary p-2 z-50 hover:bg-secondary/10 rounded-full transition-colors"
+            className="text-secondary p-2 z-[70] hover:bg-secondary/10 rounded-full transition-colors"
           >
             <span className="material-symbols-outlined text-[32px]">{isMenuOpen ? 'close' : 'menu'}</span>
           </button>
         </div>
       </nav>
 
-      {/* Side Drawer Mobile Menu */}
-      <AnimatePresence>
-        {isMenuOpen && (
-          <>
-            {/* Backdrop */}
-            <motion.div 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={closeMenu}
-              className="fixed inset-0 bg-background/60 backdrop-blur-sm z-[55] md:hidden"
-            />
-            
-            {/* Drawer */}
-            <motion.div 
-              initial={{ x: "-100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "-100%" }}
-              transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="fixed top-0 left-0 bottom-0 w-[85%] max-w-[400px] bg-background border-r border-secondary/20 z-[60] md:hidden flex flex-col p-8 pt-24"
-            >
-              <div className="flex flex-col gap-8">
-                {isFabricStudio ? (
-                  <>
-                    <Link onClick={closeMenu} href="/fabric-studio/catalog" className="text-2xl font-label-caps text-on-surface hover:text-secondary border-b border-secondary/10 pb-4">Catalog</Link>
-                    <Link onClick={closeMenu} href="/fabric-studio/about" className="text-2xl font-label-caps text-on-surface hover:text-secondary border-b border-secondary/10 pb-4">About</Link>
-                    <Link onClick={closeMenu} href="/fabric-studio/contact" className="text-2xl font-label-caps text-on-surface hover:text-secondary border-b border-secondary/10 pb-4">Contact</Link>
-                  </>
-                ) : isWoodWorks ? (
-                  <>
-                    <Link onClick={closeMenu} href="/wood-works/collections" className="text-2xl font-label-caps text-on-surface hover:text-secondary border-b border-secondary/10 pb-4">Collections</Link>
-                    <Link onClick={closeMenu} href="/wood-works/gallery" className="text-2xl font-label-caps text-on-surface hover:text-secondary border-b border-secondary/10 pb-4">Gallery</Link>
-                    <Link onClick={closeMenu} href="/contact" className="text-2xl font-label-caps text-on-surface hover:text-secondary border-b border-secondary/10 pb-4">Contact</Link>
-                  </>
-                ) : (
-                  <>
-                    <Link onClick={closeMenu} href="/fabric-studio" className="text-2xl font-label-caps text-on-surface hover:text-secondary border-b border-secondary/10 pb-4">Fabric Studio</Link>
-                    <Link onClick={closeMenu} href="/wood-works" className="text-2xl font-label-caps text-on-surface hover:text-secondary border-b border-secondary/10 pb-4">Wood Works</Link>
-                    <Link onClick={closeMenu} href="/about" className="text-2xl font-label-caps text-on-surface hover:text-secondary border-b border-secondary/10 pb-4">About</Link>
-                    <Link onClick={closeMenu} href="/contact" className="text-2xl font-label-caps text-on-surface hover:text-secondary border-b border-secondary/10 pb-4">Contact</Link>
-                  </>
-                )}
-              </div>
-
-              <div className="mt-auto flex flex-col gap-6">
-                <button className="font-label-caps bg-secondary text-on-secondary-fixed px-6 py-5 w-full uppercase tracking-[0.2em] shadow-lg">
-                  Trade Access
-                </button>
-                <div className="flex justify-center gap-6 text-on-surface-variant/40">
-                   <span className="material-symbols-outlined">public</span>
-                   <span className="material-symbols-outlined">mail</span>
-                </div>
-              </div>
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
     </header>
+    
+    <AnimatePresence>
+      {isMenuOpen && (
+        <div className="md:hidden">
+          {/* Backdrop */}
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={closeMenu}
+            className="fixed inset-0 bg-black/80 backdrop-blur-md z-[60]"
+          />
+          
+          {/* Drawer */}
+          <motion.div 
+            initial={{ x: "-100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "-100%" }}
+            transition={{ type: "spring", damping: 25, stiffness: 200 }}
+            className="fixed top-0 left-0 bottom-0 w-[85%] max-w-[400px] bg-[#0c0f0f] border-r border-secondary/20 z-[65] flex flex-col p-8 pt-24 shadow-[20px_0_50px_rgba(0,0,0,0.8)]"
+          >
+            <div className="flex flex-col gap-8">
+              {isFabricStudio ? (
+                <>
+                  <Link onClick={closeMenu} href="/fabric-studio/catalog" className="text-2xl font-label-caps text-on-surface hover:text-secondary border-b border-secondary/10 pb-4">Catalog</Link>
+                  <Link onClick={closeMenu} href="/fabric-studio/about" className="text-2xl font-label-caps text-on-surface hover:text-secondary border-b border-secondary/10 pb-4">About</Link>
+                  <Link onClick={closeMenu} href="/fabric-studio/contact" className="text-2xl font-label-caps text-on-surface hover:text-secondary border-b border-secondary/10 pb-4">Contact</Link>
+                </>
+              ) : isWoodWorks ? (
+                <>
+                  <Link onClick={closeMenu} href="/wood-works/collections" className="text-2xl font-label-caps text-on-surface hover:text-secondary border-b border-secondary/10 pb-4">Collections</Link>
+                  <Link onClick={closeMenu} href="/wood-works/gallery" className="text-2xl font-label-caps text-on-surface hover:text-secondary border-b border-secondary/10 pb-4">Gallery</Link>
+                  <Link onClick={closeMenu} href="/contact" className="text-2xl font-label-caps text-on-surface hover:text-secondary border-b border-secondary/10 pb-4">Contact</Link>
+                </>
+              ) : (
+                <>
+                  <Link onClick={closeMenu} href="/fabric-studio" className="text-2xl font-label-caps text-on-surface hover:text-secondary border-b border-secondary/10 pb-4">Fabric Studio</Link>
+                  <Link onClick={closeMenu} href="/wood-works" className="text-2xl font-label-caps text-on-surface hover:text-secondary border-b border-secondary/10 pb-4">Wood Works</Link>
+                  <Link onClick={closeMenu} href="/about" className="text-2xl font-label-caps text-on-surface hover:text-secondary border-b border-secondary/10 pb-4">About</Link>
+                  <Link onClick={closeMenu} href="/contact" className="text-2xl font-label-caps text-on-surface hover:text-secondary border-b border-secondary/10 pb-4">Contact</Link>
+                </>
+              )}
+            </div>
+
+            <div className="mt-auto flex flex-col gap-6">
+              <button className="font-label-caps bg-secondary text-on-secondary-fixed px-6 py-5 w-full uppercase tracking-[0.2em] shadow-lg">
+                Trade Access
+              </button>
+              <div className="flex justify-center gap-6 text-on-surface-variant/40">
+                 <span className="material-symbols-outlined">public</span>
+                 <span className="material-symbols-outlined">mail</span>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      )}
+    </AnimatePresence>
+    </>
   );
 }

@@ -16,12 +16,12 @@ const collections = [
   {
     title: "Dining Tables",
     img: "https://lh3.googleusercontent.com/aida-public/AB6AXuDtnYawqEji4alGOHxO25btGUoRyx7T9-VX-DkiGdkLGaHznTOir1icyLMypKDMRN-APgo1HycsxBUMebS3DDxGvO4m6qA8JoMlBkREeWtKBYkuTboOmPGuJic8zRcNUiYQLNL8TppZuQ8jLZ60aNg8gs4UeUibenzeVcNjZZ7Lyd5oOFAohOx-TfPD0JVVlsixqpEv_WlmdiRKuqbrbTR3looXWsFj8XPQp9pDB3j6CWDetM6jSpxz0JYOJ7_K4h4QqgKix0Af-Xp6",
-    href: "#"
+    href: "/wood-works/collections/dining-tables"
   },
   {
     title: "Office Furniture",
     img: "https://lh3.googleusercontent.com/aida-public/AB6AXuDXRJlNmZZ8_7masznzA4OcWaQ6GURl16AXN7eQVa6KjtmX0Kd3wV8baRagFcBo291umi6vtTIUmBK7mo69kdbmcMcC1bzBqnuT4kzso2nv6Dqm3YcQ65e45qzohq9vRRA6VP9964Sx8hpu_vtgQRUtarDghnFgeAKG-EUvFt_gSRYyJGljo_n-dO_NNsKF_Xt_RK4PSA5WFS6ZLYdFF38JA97igRig-N9T9xI6PDhWjUPmBaDjI8_xbnO5gO0l3f-Is1SO3kWT3eYi",
-    href: "#"
+    href: "/wood-works/collections/office"
   },
   {
     title: "Bedroom",
@@ -31,12 +31,12 @@ const collections = [
   {
     title: "Living Room",
     img: "https://lh3.googleusercontent.com/aida-public/AB6AXuBXF6oKnVyiXEg3Fo7PZgstfcb3yrIkWpHfoL4cTMMttmWbAab-kzxpEDuhQe4J7_3RXrpreDK6KcA95j0lh65VrtcP3LhW1DPNIHj-x8jYrd5bOip6bRTTra6kNqeE7ajsYYrYETAHLdj6zev8NvYYISpslGJdVQSDGU36JhK2MXNyCOU5pa2wLqEGuyF07uOMvoF_6o-GSK2mT5B8hMlIexmIZsPFKs81uhVGaT3l5lrp4Nzt7EewAL0bCH0yR7uuE1e0jB-7bkCM",
-    href: "#"
+    href: "/wood-works/collections/living-room"
   },
   {
     title: "Shelves",
     img: "https://lh3.googleusercontent.com/aida-public/AB6AXuBSpkugN0DoOpA_GHquH-bf-kfB_RzfjmHgvHfMfjTNJzX4-jMRnUcvA0LGfTELu-8hNVmfqixei4WKfEh8WW6qmTJMt6T5qKQRwfd-cmd75hwtXSG0jko0qXu2jytrRg9ifeKnoBuXQmNfP7PH9AxaGEBLAZOLXISSCd_C43BPTiJwWhdFkW2qnvXqG5nDFUjrlxe80DL0EBhCDitLm1Sl5xLrQzeZ99EaoYKoH2w8SKkYu0_qb_KaaXcBBGuSRDJdlJ3QreGaGfZv",
-    href: "#"
+    href: "/wood-works/collections/shelves"
   }
 ];
 

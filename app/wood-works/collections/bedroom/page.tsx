@@ -25,7 +25,7 @@ export default function BedroomCollectionPage() {
               transition={{ duration: 2, ease: luxuryEase }}
               alt="Luxury Bedroom Collection" 
               className="w-full h-full object-cover" 
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKnqQcJcPdmCdqt-LGsNDfUkX78B9z2IReTDNJx39prCfTSzkegbM9hdtvIrm_2H1wH4PQiRqSUtW2-IoRVpXxCe_O1yzOazdyT5fattD_bySaDASwzKWdR7FvU3Exl3vvDULxcX8prIGffdbY788pGeNlwxlYslZqWlpZEjtxltWILzBm1pU_yfgb1Ald3vLHfXzSX_UiopJR3YO7zH7ykJyGJFBk90tFeZb0j13aKw4rCQJPlMzNK5AVY9ZzCpwpsBLYvN0DeeGY"
+              src="/bedroom.png"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/60 to-transparent"></div>
           </div>
