@@ -35,7 +35,7 @@ export default function FabricStudio() {
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, delay: 0.5, ease: luxuryEase }}
-              className="col-span-12 md:col-span-8 lg:col-span-7 flex flex-col items-start justify-center"
+              className="col-span-12 md:col-span-8 lg:col-span-7 flex flex-col items-start justify-center bg-primary-container/30 backdrop-blur-sm p-8 md:p-12 border-l border-secondary/20"
             >
               <span className="font-label-caps text-secondary tracking-[0.3em] mb-6 block uppercase text-sm md:text-base">Fabric Studio</span>
               <h1 className="font-display-lg text-display-lg-mobile md:text-display-lg text-on-background mb-8 leading-[1.1]">
@@ -46,12 +46,16 @@ export default function FabricStudio() {
                 Discover our curated selection of high-performance fabrics, engineered for the world&apos;s most sophisticated interiors.
               </p>
               <div className="flex flex-wrap gap-6">
-                <Link href="/fabric-studio/catalog" className="bg-secondary text-on-secondary-fixed font-label-caps px-10 py-5 hover:bg-secondary-fixed-dim transition-all shadow-lg text-center min-w-[240px]">
-                  View Fabric Catalog
-                </Link>
-                <button className="hairline-border text-on-background font-label-caps px-10 py-5 hover:bg-white/5 transition-all text-center min-w-[240px]">
-                  Request Swatches
-                </button>
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <Link href="/fabric-studio/catalog" className="bg-secondary text-on-secondary-fixed font-label-caps px-10 py-5 hover:bg-secondary-fixed-dim transition-all shadow-lg text-center min-w-[240px] block">
+                    View Fabric Catalog
+                  </Link>
+                </motion.div>
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <Link href="/contact" className="hairline-border text-on-background font-label-caps px-10 py-5 hover:bg-white/5 transition-all text-center min-w-[240px] block">
+                    Request Swatches
+                  </Link>
+                </motion.div>
               </div>
             </motion.div>
           </div>

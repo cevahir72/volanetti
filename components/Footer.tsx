@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function Footer() {
   return (
@@ -26,15 +27,27 @@ export default function Footer() {
           </div>
           <div className="flex flex-col gap-4">
             <h5 className="font-label-caps text-secondary mb-2">Trade</h5>
-            <Link href="#" className="font-body-md text-on-surface-variant hover:text-secondary transition-colors">Trade Access</Link>
-            <Link href="#" className="font-body-md text-on-surface-variant hover:text-secondary transition-colors">Material Care</Link>
-            <Link href="#" className="font-body-md text-on-surface-variant hover:text-secondary transition-colors">Order Samples</Link>
+            <motion.div whileHover={{ x: 5 }} transition={{ type: "spring", stiffness: 300, damping: 20 }}>
+              <Link href="/contact" className="font-body-md text-on-surface-variant hover:text-secondary transition-colors">Trade Access</Link>
+            </motion.div>
+            <motion.div whileHover={{ x: 5 }} transition={{ type: "spring", stiffness: 300, damping: 20 }}>
+              <Link href="/contact" className="font-body-md text-on-surface-variant hover:text-secondary transition-colors">Material Care</Link>
+            </motion.div>
+            <motion.div whileHover={{ x: 5 }} transition={{ type: "spring", stiffness: 300, damping: 20 }}>
+              <Link href="/contact" className="font-body-md text-on-surface-variant hover:text-secondary transition-colors">Order Samples</Link>
+            </motion.div>
           </div>
           <div className="flex flex-col gap-4">
             <h5 className="font-label-caps text-secondary mb-2">Legal</h5>
-            <Link href="#" className="font-body-md text-on-surface-variant hover:text-secondary transition-colors">Terms of Service</Link>
-            <Link href="#" className="font-body-md text-on-surface-variant hover:text-secondary transition-colors">Privacy Policy</Link>
-            <Link href="#" className="font-body-md text-on-surface-variant hover:text-secondary transition-colors">Contact</Link>
+            <motion.div whileHover={{ x: 5 }} transition={{ type: "spring", stiffness: 300, damping: 20 }}>
+              <Link href="/contact" className="font-body-md text-on-surface-variant hover:text-secondary transition-colors">Terms of Service</Link>
+            </motion.div>
+            <motion.div whileHover={{ x: 5 }} transition={{ type: "spring", stiffness: 300, damping: 20 }}>
+              <Link href="/contact" className="font-body-md text-on-surface-variant hover:text-secondary transition-colors">Privacy Policy</Link>
+            </motion.div>
+            <motion.div whileHover={{ x: 5 }} transition={{ type: "spring", stiffness: 300, damping: 20 }}>
+              <Link href="/contact" className="font-body-md text-on-surface-variant hover:text-secondary transition-colors">Contact</Link>
+            </motion.div>
           </div>
         </div>
       </div>

@@ -33,7 +33,7 @@ export default function Home() {
               transition={{ duration: 2, ease: luxuryEase }}
               alt="Volanetti Emerald Velvet Drapery" 
               className="w-full h-full object-cover" 
-              src="https://lh3.googleusercontent.com/aida/ADBb0ujFXZV9B2XPh1h5lkcDEbTTtJRvodXZ-ynJwyMzzKxyS8QOzlAfZXKd-VoYedGUjSVaX2alI_Epr1sywqa4Dhs9PoQFjIcfQ4NxMuQgG7oQYOdujMtYwrGmpiQqbxqrpA7t0rNpEEvsdjEN_M3F5kLHyWRjQHKbkIgs4JYT4T_GWefWZVn6WijDW1eZjywYpi78sGTq95IDjMwIzFssJkPSrL4FAeeHDFa77n5X3s9APa6UKjueo7r1doQ"
+              src="/home_img.png"
             />
             {/* Tonal Layering Overlay */}
             <div className="absolute inset-0 bg-gradient-to-r from-primary-container/95 via-primary-container/40 to-transparent"></div>
@@ -44,13 +44,23 @@ export default function Home() {
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, delay: 0.5, ease: luxuryEase }}
-              className="col-span-12 md:col-span-8 lg:col-span-7 flex flex-col items-start justify-center"
+              className="col-span-12 md:col-span-8 lg:col-span-7 flex flex-col items-start justify-center bg-primary-container/30 backdrop-blur-md p-8 md:p-12 border-l border-secondary/20"
             >
               <span className="font-label-caps text-secondary tracking-[0.3em] mb-6 block uppercase">Bespoke Fabrication</span>
-              <h1 className="font-display-lg text-display-lg-mobile md:text-display-lg text-on-background mb-8 leading-[1.1]">
+              <motion.h1 
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 0.7, ease: luxuryEase }}
+                className="font-display-lg text-display-lg-mobile md:text-display-lg text-on-background mb-8 leading-[1.1]"
+              >
                 Handcrafted Drapery.<br/>
-                <span className="italic font-medium">Exclusive to the Trade.</span>
-              </h1>
+                <motion.span 
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 1, delay: 1.2, ease: luxuryEase }}
+                  className="italic font-medium"
+                >Exclusive to the Trade.</motion.span>
+              </motion.h1>
               <p className="font-body-lg text-on-surface-variant max-w-lg mb-8">
                 Velvet & Linen Curtains <span className="text-secondary mx-2">|</span> Custom Sizing <span className="text-secondary mx-2">|</span> Wholesale Pricing
               </p>
@@ -63,12 +73,22 @@ export default function Home() {
                 </Link>
               </div>
               <div className="flex flex-wrap gap-6">
-                <button className="bg-secondary text-on-secondary-fixed font-label-caps px-10 py-5 hover:bg-secondary-fixed-dim transition-all shadow-lg">
-                  Request Trade Access
-                </button>
-                <Link href="/collections" className="hairline-border text-on-background font-label-caps px-10 py-5 hover:bg-white/5 transition-all text-center">
-                  View Catalog
-                </Link>
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <Link 
+                    href="/contact" 
+                    className="bg-secondary text-on-secondary-fixed font-label-caps px-10 py-5 hover:bg-secondary-fixed-dim transition-all shadow-lg text-center block"
+                  >
+                    Request Trade Access
+                  </Link>
+                </motion.div>
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <Link 
+                    href="/collections" 
+                    className="hairline-border text-on-background font-label-caps px-10 py-5 hover:bg-white/5 transition-all text-center block"
+                  >
+                    View Catalog
+                  </Link>
+                </motion.div>
               </div>
             </motion.div>
           </div>
@@ -154,7 +174,14 @@ export default function Home() {
               >
                 <h3 className="font-headline-md text-secondary mb-4">Contract Solutions</h3>
                 <p className="font-body-md text-on-surface-variant mb-6">Optimized workflows for large-scale development projects and commercial interiors.</p>
-                <Link href="#" className="font-label-caps border-b border-secondary/40 self-start pb-1 hover:border-secondary transition-colors">Learn More</Link>
+                <Link href="/contact" className="font-label-caps border-b border-secondary/40 self-start pb-1 hover:border-secondary transition-colors group/link">
+                  Learn More
+                  <motion.span 
+                    className="inline-block ml-2"
+                    initial={{ x: 0 }}
+                    whileHover={{ x: 5 }}
+                  >→</motion.span>
+                </Link>
               </motion.div>
 
               <motion.div 

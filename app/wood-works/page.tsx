@@ -26,7 +26,7 @@ export default function WoodWorksPage() {
               transition={{ duration: 2, ease: luxuryEase }}
               alt="Volanetti Walnut Dining Table" 
               className="w-full h-full object-cover" 
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuB29A_IFw8MjYGnM1amPcWrmmA8oXLpa1g7rFG6hq8mJYdBGdok51cYSqLjS9-q9hz9hW7fXmEnT_kz_yMf2x1cXf2rfKqt3B6XUoDx8xFeepjyrP817mJP_TEUTmSeXA9zNuFkfcqRxy9uJSFz6RaW9eW8k7pdLCInHNPmFw2b0ruEpEqL7kqhGHiqaHAkVhozeO7xjpVxHDGiIy9Jrqkf5Zqj-Mcamefb6A--RNSbYTBg5271LoMdv2axglCDygNvwCBbB8rOkDnR"
+              src="/wood.png"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/40 to-transparent"></div>
           </div>
@@ -49,13 +49,17 @@ export default function WoodWorksPage() {
                 Custom dining tables, office furniture & bedroom pieces — crafted from walnut, oak, and maple with architectural precision.
               </p>
               <div className="flex flex-col sm:flex-row gap-6">
-                <Link href="/wood-works/collections" className="bg-secondary text-on-secondary-fixed px-8 py-4 font-label-caps flex items-center justify-center gap-2 hover:bg-secondary-fixed-dim transition-all uppercase tracking-widest">
-                  Explore Collections
-                  <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
-                </Link>
-                <Link href="/contact" className="border border-on-surface text-on-surface px-8 py-4 font-label-caps flex items-center justify-center hover:bg-on-surface/10 transition-all uppercase tracking-widest">
-                  Get a Free Quote
-                </Link>
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex-1 sm:flex-initial">
+                  <Link href="/wood-works/collections" className="bg-secondary text-on-secondary-fixed px-8 py-4 font-label-caps flex items-center justify-center gap-2 hover:bg-secondary-fixed-dim transition-all uppercase tracking-widest w-full">
+                    Explore Collections
+                    <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+                  </Link>
+                </motion.div>
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex-1 sm:flex-initial">
+                  <Link href="/contact" className="border border-on-surface text-on-surface px-8 py-4 font-label-caps flex items-center justify-center hover:bg-on-surface/10 transition-all uppercase tracking-widest w-full">
+                    Get a Free Quote
+                  </Link>
+                </motion.div>
               </div>
             </motion.div>
           </div>

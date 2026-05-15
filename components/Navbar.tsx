@@ -19,9 +19,11 @@ export default function Navbar() {
     <header className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-secondary/20 h-20">
       <nav className="flex justify-between items-center max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop h-full">
         {/* Logo Left */}
-        <Link href="/" className="font-display-lg text-secondary tracking-tighter uppercase text-[24px] z-50">
-          Volanetti
-        </Link>
+        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+          <Link href="/" className="font-display-lg text-secondary tracking-tighter uppercase text-[24px] z-50 block">
+            Volanetti
+          </Link>
+        </motion.div>
         
         {/* Desktop Menu Center/Right */}
         <div className="hidden md:flex items-center gap-10 lg:gap-16">
@@ -49,9 +51,9 @@ export default function Navbar() {
           </div>
 
           <div className="flex items-center gap-4 border-l border-secondary/20 pl-10 lg:pl-16">
-            <button className="hidden sm:block font-label-caps bg-secondary text-on-secondary-fixed px-6 py-3 hover:opacity-90 transition-all cursor-pointer">
+            <Link href="/contact" className="hidden sm:block font-label-caps bg-secondary text-on-secondary-fixed px-6 py-3 hover:opacity-90 transition-all cursor-pointer">
               Trade Access
-            </button>
+            </Link>
           </div>
         </div>
 
@@ -112,9 +114,9 @@ export default function Navbar() {
             </div>
 
             <div className="mt-auto flex flex-col gap-6">
-              <button className="font-label-caps bg-secondary text-on-secondary-fixed px-6 py-5 w-full uppercase tracking-[0.2em] shadow-lg">
+              <Link onClick={closeMenu} href="/contact" className="font-label-caps bg-secondary text-on-secondary-fixed px-6 py-5 w-full uppercase tracking-[0.2em] shadow-lg text-center">
                 Trade Access
-              </button>
+              </Link>
               <div className="flex justify-center gap-6 text-on-surface-variant/40">
                  <span className="material-symbols-outlined">public</span>
                  <span className="material-symbols-outlined">mail</span>

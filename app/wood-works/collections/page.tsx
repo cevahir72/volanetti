@@ -51,7 +51,7 @@ export default function WoodCollectionsPage() {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: luxuryEase }}
-              className="font-headline-lg text-4xl md:text- headline-lg text-on-background mb-6 uppercase tracking-tight"
+              className="font-headline-lg text-4xl md:text-headline-lg text-on-background mb-6 uppercase tracking-tight"
             >
               Discover Our Collections
             </motion.h1>
