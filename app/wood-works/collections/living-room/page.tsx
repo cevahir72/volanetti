@@ -40,6 +40,12 @@ export default function LivingRoomCollectionPage() {
               Where architectural precision meets the warmth of bespoke craftsmanship. Discover our latest manufacture of artisanal seating and surfaces.
             </p>
           </motion.div>
+
+          {/* Scroll Indicator */}
+          <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-secondary/60">
+            <span className="font-label-caps text-[10px] uppercase tracking-[0.3em]">Scroll to Explore</span>
+            <span className="material-symbols-outlined animate-bounce">expand_more</span>
+          </div>
         </header>
 
         <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-24 md:py-32 space-y-24 md:space-y-32">

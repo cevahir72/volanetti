@@ -42,6 +42,12 @@ export default function OfficeCollectionPage() {
               </p>
             </motion.div>
           </div>
+
+          {/* Scroll Indicator */}
+          <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-secondary/60">
+            <span className="font-label-caps text-[10px] uppercase tracking-[0.3em]">Scroll to Explore</span>
+            <span className="material-symbols-outlined animate-bounce">expand_more</span>
+          </div>
         </section>
 
         {/* Product Bento Grid */}
