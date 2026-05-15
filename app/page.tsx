@@ -1,22 +1,16 @@
 "use client";
 
-import { motion, Variants } from "framer-motion";
+import { motion } from "framer-motion";
 import Link from "next/link";
+import { LineRevealText } from "@/components/LineRevealText";
+import {
+  luxuryFadeUp,
+  luxuryStaggerContainer,
+  slideInLeft,
+  luxuryEase,
+} from "@/lib/animations";
 
 export default function Home() {
-  const staggerContainer: Variants = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: { staggerChildren: 0.2 },
-    },
-  };
-
-  const fadeUpItem: Variants = {
-    hidden: { opacity: 0, y: 30 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
-  };
-
   return (
     <>
       {/* Top Navigation Shell */}
@@ -44,9 +38,9 @@ export default function Home() {
           <div className="group relative flex-1 h-1/2 md:h-full hero-split-hover bg-cover bg-center" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuAlE_DhdpgiS204cg2ssaaPpUsIFLR0mWzJp2dHBBy07dh5rWSmmNE0wpd_039o3Rb1V3lftTRbxNdaOssy9cjvrux35rPCTs2Y__zNIgYVabUIVM89JKtJIy2YJPnFG6Uyfp8cT9RyMdzXEHOrU5wBf_McHU2HSOUW_NXUqkNm2MGHFeOXe6FI6VBQ9zVJ6mlYi-nGKmAkHLn0_-3ILtJjAyYG4F7w5Sr40tiVsomd3vRk-em2qUq_YSWXLJ8-VKxtEkfMam0T7Dzz')" }}>
             <div className="absolute inset-0 bg-primary-container/40 group-hover:bg-primary-container/60 transition-all duration-500"></div>
             <motion.div 
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: luxuryEase }}
               className="relative h-full flex flex-col items-center justify-center p-12 text-center"
             >
               <h2 className="text-on-surface font-display-lg text-display-lg-mobile md:text-display-lg mb-8 drop-shadow-lg">Fabric Studio</h2>
@@ -62,9 +56,9 @@ export default function Home() {
           <div className="group relative flex-1 h-1/2 md:h-full hero-split-hover bg-cover bg-center" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuAsuqy8c6S71_2gUXC66fWHz_NQgr259ELA4Qw5wYwyw2T4Xvh5m34Yf6sqXWR1OmU6Jl8d5l47YmnSCIUczhTZ1XSsUKHjw7VQSoTo_kEPevhguqPJfM_E2LaFb5JkzIz5E93SQg_Czdq6qZeN6Hg_XjS1LcC0b7Bef2t4RWiY3Y2ELYyokq05P0N8o6HMkkut5_vtyPjPcU27kGNYFtctKvPrrzVlBSXVlUPIiuCdmArRboGGDJCCpbhtI_P8xWQWOGMm7rtbaO9W')" }}>
             <div className="absolute inset-0 bg-primary-container/30 group-hover:bg-primary-container/50 transition-all duration-500"></div>
             <motion.div 
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              transition={{ duration: 0.8, delay: 0.4, ease: luxuryEase }}
               className="relative h-full flex flex-col items-center justify-center p-12 text-center"
             >
               <h2 className="text-on-surface font-display-lg text-display-lg-mobile md:text-display-lg mb-8 drop-shadow-lg">Wood Works</h2>
@@ -84,16 +78,18 @@ export default function Home() {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true, margin: "-100px" }}
-              variants={staggerContainer}
+              variants={luxuryStaggerContainer}
               className="grid md:grid-cols-12 gap-12 items-end"
             >
-              <motion.div variants={fadeUpItem} className="md:col-span-7">
+              <motion.div variants={luxuryFadeUp} className="md:col-span-7">
                 <span className="text-secondary font-label-caps text-label-caps mb-6 block">ESTABLISHED EXCELLENCE</span>
-                <h2 className="text-on-surface font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-8 leading-tight">
-                  Manufacturing Excellence for the Architectural Avant-Garde.
-                </h2>
+                <LineRevealText
+                  text="Manufacturing Excellence for the Architectural Avant-Garde."
+                  className="text-on-surface font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-8 leading-tight"
+                  tag="h2"
+                />
               </motion.div>
-              <motion.div variants={fadeUpItem} className="md:col-span-5 pb-2">
+              <motion.div variants={luxuryFadeUp} className="md:col-span-5 pb-2">
                 <p className="text-on-primary-container font-body-lg text-body-lg leading-relaxed max-w-prose">
                   Volanetti stands at the intersection of industrial precision and artisanal heritage. We provide high-end B2B solutions for developers and designers who demand the tactile luxury of custom fabrications with the reliability of master-scale manufacturing.
                 </p>
@@ -105,7 +101,7 @@ export default function Home() {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true, margin: "-100px" }}
-              variants={staggerContainer}
+              variants={luxuryStaggerContainer}
               className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-8"
             >
               {[
@@ -113,7 +109,7 @@ export default function Home() {
                 { icon: "precision_manufacturing", title: "Bespoke Scalability", desc: "From single custom pieces to full-suite hospitality contracts, we maintain rigorous quality standards at every volume." },
                 { icon: "handshake", title: "Partner Relations", desc: "Dedicated account managers and technical support for architects, interior designers, and high-end developers." }
               ].map((item, i) => (
-                <motion.div key={i} variants={fadeUpItem} className="border border-secondary/20 p-8 bg-surface-container-lowest transition-all hover:border-secondary/40 hover:-translate-y-2">
+                <motion.div key={i} variants={luxuryFadeUp} className="border border-secondary/20 p-8 bg-surface-container-lowest transition-all hover:border-secondary/40 hover:-translate-y-2">
                   <span className="material-symbols-outlined text-secondary text-4xl mb-6" data-icon={item.icon}>{item.icon}</span>
                   <h3 className="text-on-surface font-headline-md text-headline-md mb-4">{item.title}</h3>
                   <p className="text-on-surface-variant font-body-md text-body-md">{item.desc}</p>
@@ -128,10 +124,10 @@ export default function Home() {
           <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
             <div className="flex flex-col md:flex-row gap-20 items-center">
               <motion.div 
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial="hidden"
+                whileInView="show"
                 viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
+                variants={slideInLeft}
                 className="w-full md:w-1/2 aspect-square bg-surface-container-low overflow-hidden relative"
               >
                 <img 
@@ -144,10 +140,10 @@ export default function Home() {
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true, margin: "-100px" }}
-                variants={staggerContainer}
+                variants={luxuryStaggerContainer}
                 className="w-full md:w-1/2"
               >
-                <motion.h2 variants={fadeUpItem} className="text-on-surface font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-8">
+                <motion.h2 variants={luxuryFadeUp} className="text-on-surface font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-8">
                   The Material Integrity Manifesto
                 </motion.h2>
                 <ul className="space-y-6">
@@ -156,7 +152,7 @@ export default function Home() {
                     { num: "02", title: "Technical Tolerance", desc: "Precision milling with tolerances within 0.5mm for seamless architectural installation." },
                     { num: "03", title: "Performance Testing", desc: "All textiles meet high-traffic contract rub counts and international fire safety standards." },
                   ].map((item, i) => (
-                    <motion.li key={i} variants={fadeUpItem} className="flex gap-4 border-b border-on-surface/10 pb-4">
+                    <motion.li key={i} variants={luxuryFadeUp} className="flex gap-4 border-b border-on-surface/10 pb-4">
                       <span className="text-secondary font-label-caps text-label-caps">{item.num}</span>
                       <div>
                         <h4 className="text-on-surface font-label-caps text-label-caps mb-1 uppercase">{item.title}</h4>
