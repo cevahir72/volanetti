@@ -20,7 +20,7 @@ export default function Home() {
             VOLANETTI
           </div>
           <div className="hidden md:flex gap-8 items-center">
-            <Link className="text-secondary dark:text-secondary border-b border-secondary pb-1 text-label-caps font-label-caps transition-all duration-200" href="#">Fabric Studio</Link>
+            <Link className="text-on-surface-variant dark:text-on-surface-variant hover:text-secondary dark:hover:text-secondary hover:underline transition-all duration-300 text-label-caps font-label-caps" href="/fabric-studio">Fabric Studio</Link>
             <Link className="text-on-surface-variant dark:text-on-surface-variant hover:text-secondary dark:hover:text-secondary transition-colors duration-300 text-label-caps font-label-caps" href="#">Wood Works</Link>
             <Link className="text-on-surface-variant dark:text-on-surface-variant hover:text-secondary dark:hover:text-secondary transition-colors duration-300 text-label-caps font-label-caps" href="#">Our Craft</Link>
             <Link className="text-on-surface-variant dark:text-on-surface-variant hover:text-secondary dark:hover:text-secondary transition-colors duration-300 text-label-caps font-label-caps" href="#">Contact</Link>
@@ -45,9 +45,9 @@ export default function Home() {
             >
               <h2 className="text-on-surface font-display-lg text-display-lg-mobile md:text-display-lg mb-8 drop-shadow-lg">Fabric Studio</h2>
               <div className="overlay flex flex-col items-center gap-6">
-                <button className="border border-secondary text-secondary px-12 py-4 text-label-caps font-label-caps hover:bg-secondary hover:text-on-secondary transition-all duration-300">
+                <Link href="/fabric-studio" className="border border-secondary text-secondary px-12 py-4 text-label-caps font-label-caps hover:bg-secondary hover:text-on-secondary transition-all duration-300 inline-block">
                   Enter
-                </button>
+                </Link>
               </div>
             </motion.div>
           </div>
