@@ -70,6 +70,9 @@
 }
 
 @layer utilities {
+  .font-playfair {
+    font-family: var(--font-playfair), serif;
+  }
   .font-label-caps {
     font-family: var(--font-inter), sans-serif;
     font-size: 12px;

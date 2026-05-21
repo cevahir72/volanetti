@@ -19,8 +19,8 @@ export default function Navbar() {
     <header className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-secondary/20 h-20">
       <nav className="flex justify-between items-center max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop h-full">
         {/* Logo Left */}
-        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-          <Link href="/" className="font-display-lg text-secondary tracking-tighter uppercase text-[24px] z-50 block">
+        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex-shrink-0">
+          <Link href="/" className="font-playfair font-bold text-secondary tracking-tighter uppercase text-[28px] min-[375px]:text-[30px] whitespace-nowrap z-50 block">
             Volanetti
           </Link>
         </motion.div>
@@ -58,7 +58,7 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Hamburger Right */}
-        <div className="flex md:hidden items-center">
+        <div className="flex md:hidden items-center flex-shrink-0">
           <button 
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="text-secondary p-2 z-[70] hover:bg-secondary/10 rounded-full transition-colors"

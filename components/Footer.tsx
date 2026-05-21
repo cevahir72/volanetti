@@ -8,7 +8,7 @@ export default function Footer() {
     <footer className="bg-surface-container-lowest w-full py-20 border-t border-secondary/10">
       <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-start gap-12">
         <div className="flex flex-col gap-6 max-w-sm">
-          <div className="font-display-lg text-secondary uppercase text-[32px]">VOLANETTI</div>
+          <div className="font-playfair font-bold text-secondary uppercase text-[32px] whitespace-nowrap">VOLANETTI</div>
           <p className="font-body-md text-on-surface-variant leading-relaxed">
             Crafting architectural excellence through bespoke textiles. Trusted by the world&apos;s leading design firms.
           </p>
