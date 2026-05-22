@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import FabricColorSwatch from "@/components/FabricColorSwatch";
 import fabrics from "@/data/fabrics.json";
 
 const luxuryEase = [0.16, 1, 0.3, 1] as [number, number, number, number];
@@ -31,60 +32,39 @@ export default function FabricCatalog() {
             <span>/</span>
             <span className="text-secondary">Catalog</span>
           </nav>
-          <h1 className="font-display-lg text-4xl md:text-6xl text-on-background mb-4">Fabric Catalog</h1>
-          <p className="font-body-lg text-on-surface-variant max-w-2xl">A comprehensive selection of our finest architectural textiles. Filter by material or explore our complete inventory.</p>
+          <h1 className="font-display-lg text-[0.625rem] md:text-3xl text-on-background mb-4">Fabric Color Palette</h1>
+          <p className="font-body-lg text-on-surface-variant max-w-2xl">Explore our comprehensive range of fabric colors. Interact with the swatches to see how each color transforms the texture of our premium fabric.</p>
         </motion.div>
 
-        {/* Catalog Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-          {fabrics.map((fabric) => (
-            <motion.div 
-              key={fabric.id}
-              {...fadeUp}
-              className="group flex flex-col bg-surface-container-low rounded-xl overflow-hidden hairline-border hover:border-secondary/40 transition-all duration-500 hover:shadow-2xl"
-            >
-              {/* Image Container */}
-              <div className="relative aspect-square overflow-hidden bg-surface-container-highest">
-                <img 
-                  src={fabric.image} 
-                  alt={fabric.name} 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
-                />
-                <div className="absolute top-4 right-4 bg-background/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/10">
-                  <span className="font-label-caps text-[10px] text-secondary tracking-widest uppercase">{fabric.category}</span>
-                </div>
-              </div>
+        {/* Color Swatch Section */}
+        <motion.div {...fadeUp}>
+          <FabricColorSwatch 
+            colors={fabrics}
+            imageSrc="/fabric_image.png"
+            title="Fabric Colors"
+          />
+        </motion.div>
 
-              {/* Details Container */}
-              <div className="p-6 flex flex-col gap-4">
-                <div className="flex justify-between items-start">
-                  <div>
-                    <h3 className="font-headline-md text-xl text-on-surface group-hover:text-secondary transition-colors">{fabric.name}</h3>
-                    <p className="font-label-caps text-[10px] text-on-surface-variant/60 tracking-widest uppercase mt-1">{fabric.code}</p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 mt-2">
-                  <div 
-                    className="w-8 h-8 rounded-full border border-secondary/20 shadow-inner" 
-                    style={{ backgroundColor: fabric.hex }}
-                  ></div>
-                  <span className="font-body-md text-sm text-on-surface-variant">{fabric.hex}</span>
-                </div>
-
-                <button className="mt-4 w-full py-3 hairline-border text-on-background font-label-caps text-[10px] uppercase tracking-widest hover:bg-secondary hover:text-on-secondary-fixed transition-all">
-                  Request Sample
-                </button>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Load More / Pagination Placeholder */}
-        <motion.div {...fadeUp} className="mt-20 flex justify-center">
-          <button className="px-12 py-4 bg-secondary/10 border border-secondary text-secondary font-label-caps uppercase tracking-widest hover:bg-secondary hover:text-on-secondary-fixed transition-all">
-            Load More Materials
-          </button>
+        {/* Info Section */}
+        <motion.div {...fadeUp} className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 pt-16 border-t border-outline-variant/30">
+          <div className="space-y-3">
+            <h3 className="font-headline-sm text-xl text-secondary">Desktop View</h3>
+            <p className="text-sm text-on-surface-variant leading-relaxed">
+              Hover over any color swatch in the 4-column grid to see a detailed preview. Click to select and view detailed information about the color.
+            </p>
+          </div>
+          <div className="space-y-3">
+            <h3 className="font-headline-sm text-xl text-secondary">Mobile View</h3>
+            <p className="text-sm text-on-surface-variant leading-relaxed">
+              Scroll through the color swatches horizontally. Tap any color to select it and view a larger preview with the complete color information.
+            </p>
+          </div>
+          <div className="space-y-3">
+            <h3 className="font-headline-sm text-xl text-secondary">Color Technology</h3>
+            <p className="text-sm text-on-surface-variant leading-relaxed">
+              Our grayscale fabric image is enhanced with CSS blend modes to show an authentic representation of how each color interacts with the textile.
+            </p>
+          </div>
         </motion.div>
       </div>
     </div>

@@ -1,66 +1,42 @@
 [
-  {
-    "id": 1,
-    "name": "Emerald Velvet",
-    "code": "VL-702",
-    "hex": "#043927",
-    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuAZm1e8z4HQF8c6IDE2ebU2Txkq8CFN9VmRbpb6Eitq6hUrWWtdUDx4TsBM-Sjtn5_0NUkPIOBCXY6X8zOgD4idxseDSGWRHvhR2_fAPhxk02mCS3YLftgyEj-c-5A3c89SkkmLGjWf6i17QiaRY9l64er3lsivwe4HuvOxPUldQsOzUEB2eiWY71g48psHAhmEWq39dNZ_qmJp2AJYM3DJNd9OXy3pxvIL5an3-Q4jrIx8cLR3xToi0L-s6DTt5iVj8Yh86mj6_hL0",
-    "category": "Velvet"
-  },
-  {
-    "id": 2,
-    "name": "Slate Linen",
-    "code": "LN-405",
-    "hex": "#4A4E52",
-    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuAJDjTzW7EUC0yvH8yQXaNetSjmOVsZ1WD165uGyk5qgPP-0f5fdvNab_DvVDtu2R0aZUIdOzEhBsFHKrQqMR0stzrgffGBD-GukT2viiUpUusFCGRT5FT62m-_xz7AzSd_YUjjCERPxksdLllSqt2mGchtSaYAcOOOXe4_lfv5IYYGL8pewL3xRAIzhfK8wqWg1gdszozFMMxmK_VUvvA8IJzyHwwvqYApH_haG7ADEYfDNZap5QCDXn6ggKv2gT2Dv0_veg9erBtk",
-    "category": "Linen"
-  },
-  {
-    "id": 3,
-    "name": "Midnight Velvet",
-    "code": "VL-901",
-    "hex": "#0A1128",
-    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCi0Ym_fMrXfYnxvVVUDRcZgl-ynBtgeb0AzfoxTiqWtJVSM6HhEd_VD3yrY82DfMBdm2841aE58kpI_uZNXJwZpi141kKyRjaECyfxKaWiWjUIkeEUOubzvHy4x71jORKOzmuUSyIn7ux_701jrWHHk5LgkpPtz4BEzMki2s-r8dV7dDh5wlH1w9pTVww-xW81rXifuu1fzSV3gKvAzVMGnCEcFv2oB9PwxHipUkS6GCv3JqASloMC4NceYMrjc8E6KBQaeCvFuWRY",
-    "category": "Velvet"
-  },
-  {
-    "id": 4,
-    "name": "Oatmeal Linen",
-    "code": "LN-202",
-    "hex": "#D2B48C",
-    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuA1Nuk7BfM3Qv01txJLkxl9lTn_vD-_1bpmMcLnmjdr4XevgQydPeJdtJQBtsURcMMN-XR50q3hZxPdSOa9zVB5L3Ts1UjYo45AfGvcb5CjoOGCArikMQSSYDOfyW_WXjf6-fHortTJRzUvQzZoEeAAytv3oDZ32mdp58P-sPPNWrBJ16kp8-mMojxLoFh78txWX6QafqWwM_3YHuyxE7mgHHGmrkNepTsJ0Nm1IMlr7z7-W5IuQNsoWMq4nDGs-IksoOQ1dXJh0eXT",
-    "category": "Linen"
-  },
-  {
-    "id": 5,
-    "name": "Forest Green",
-    "code": "VL-705",
-    "hex": "#0B3D1D",
-    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuAZm1e8z4HQF8c6IDE2ebU2Txkq8CFN9VmRbpb6Eitq6hUrWWtdUDx4TsBM-Sjtn5_0NUkPIOBCXY6X8zOgD4idxseDSGWRHvhR2_fAPhxk02mCS3YLftgyEj-c-5A3c89SkkmLGjWf6i17QiaRY9l64er3lsivwe4HuvOxPUldQsOzUEB2eiWY71g48psHAhmEWq39dNZ_qmJp2AJYM3DJNd9OXy3pxvIL5an3-Q4jrIx8cLR3xToi0L-s6DTt5iVj8Yh86mj6_hL0",
-    "category": "Velvet"
-  },
-  {
-    "id": 6,
-    "name": "Charcoal Linen",
-    "code": "LN-808",
-    "hex": "#36454F",
-    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuAJDjTzW7EUC0yvH8yQXaNetSjmOVsZ1WD165uGyk5qgPP-0f5fdvNab_DvVDtu2R0aZUIdOzEhBsFHKrQqMR0stzrgffGBD-GukT2viiUpUusFCGRT5FT62m-_xz7AzSd_YUjjCERPxksdLllSqt2mGchtSaYAcOOOXe4_lfv5IYYGL8pewL3xRAIzhfK8wqWg1gdszozFMMxmK_VUvvA8IJzyHwwvqYApH_haG7ADEYfDNZap5QCDXn6ggKv2gT2Dv0_veg9erBtk",
-    "category": "Linen"
-  },
-  {
-    "id": 7,
-    "name": "Champagne Silk",
-    "code": "SK-101",
-    "hex": "#F7E7CE",
-    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCi0Ym_fMrXfYnxvVVUDRcZgl-ynBtgeb0AzfoxTiqWtJVSM6HhEd_VD3yrY82DfMBdm2841aE58kpI_uZNXJwZpi141kKyRjaECyfxKaWiWjUIkeEUOubzvHy4x71jORKOzmuUSyIn7ux_701jrWHHk5LgkpPtz4BEzMki2s-r8dV7dDh5wlH1w9pTVww-xW81rXifuu1fzSV3gKvAzVMGnCEcFv2oB9PwxHipUkS6GCv3JqASloMC4NceYMrjc8E6KBQaeCvFuWRY",
-    "category": "Silk"
-  },
-  {
-    "id": 8,
-    "name": "Deep Ochre",
-    "code": "VL-303",
-    "hex": "#CC7722",
-    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuA1Nuk7BfM3Qv01txJLkxl9lTn_vD-_1bpmMcLnmjdr4XevgQydPeJdtJQBtsURcMMN-XR50q3hZxPdSOa9zVB5L3Ts1UjYo45AfGvcb5CjoOGCArikMQSSYDOfyW_WXjf6-fHortTJRzUvQzZoEeAAytv3oDZ32mdp58P-sPPNWrBJ16kp8-mMojxLoFh78txWX6QafqWwM_3YHuyxE7mgHHGmrkNepTsJ0Nm1IMlr7z7-W5IuQNsoWMq4nDGs-IksoOQ1dXJh0eXT",
-    "category": "Velvet"
-  }
+  { "name": "Light Dusty Rose", "hex": "#D4AFA8" },
+  { "name": "Blushing Bride", "hex": "#E8C8C8" },
+  { "name": "Rose Royale", "hex": "#D4909A" },
+  { "name": "Salmon Blush", "hex": "#E8A898" },
+  { "name": "Mocha Purple", "hex": "#B89898" },
+  { "name": "Almost Apricot", "hex": "#D4A888" },
+  { "name": "Canyon Clay", "hex": "#C87858" },
+  { "name": "Burnt Brick", "hex": "#B86848" },
+  { "name": "Redwood Burl", "hex": "#A04838" },
+  { "name": "Burgundy", "hex": "#782030" },
+  { "name": "Off-White", "hex": "#F0EDE8" },
+  { "name": "White", "hex": "#F8F6F2" },
+  { "name": "Cream (pinkish)", "hex": "#EDE0D8" },
+  { "name": "Beige", "hex": "#E0D0C0" },
+  { "name": "Warm Red", "hex": "#C83030" },
+  { "name": "Large Checks", "hex": "#C8C0B0" },
+  { "name": "Small Checks", "hex": "#B8B0A0" },
+  { "name": "Small & Thick Stripes", "hex": "#A89880" },
+  { "name": "Taupe", "hex": "#B0988A" },
+  { "name": "Chocolate Brown", "hex": "#806050" },
+  { "name": "Sunset Gold", "hex": "#C8A030" },
+  { "name": "Summer Melon", "hex": "#D8A840" },
+  { "name": "Saffron", "hex": "#C89020" },
+  { "name": "Amber Yellow", "hex": "#C89830" },
+  { "name": "Earth Brown", "hex": "#907050" },
+  { "name": "Green Lily", "hex": "#98C8A8" },
+  { "name": "Emerald Green", "hex": "#208060" },
+  { "name": "Forest Green", "hex": "#487870" },
+  { "name": "Deep Sea Green", "hex": "#507880" },
+  { "name": "Moss Green", "hex": "#487830" },
+  { "name": "Icy Blue", "hex": "#A8C8D8" },
+  { "name": "Swedish Blue", "hex": "#6898B8" },
+  { "name": "Carolina Blue", "hex": "#88A8C8" },
+  { "name": "Lavender Violet", "hex": "#9898C8" },
+  { "name": "Denim Blue", "hex": "#486888" },
+  { "name": "Navy Blue", "hex": "#283858" },
+  { "name": "Charcoal Blue", "hex": "#384858" },
+  { "name": "Cool Grey", "hex": "#989898" },
+  { "name": "Metallic Grey", "hex": "#A8A8A0" },
+  { "name": "Deep Grey", "hex": "#686868" }
 ]
