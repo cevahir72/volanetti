@@ -46,7 +46,7 @@ export default function WoodWorksPage() {
                 Furniture Built to Last Generations
               </h1>
               <p className="font-body-lg text-on-surface-variant mb-12 max-w-lg leading-relaxed">
-                Custom dining tables, office furniture & bedroom pieces — crafted from walnut, oak, and maple with architectural precision.
+                Custom dining tables, office furniture and bedroom pieces — crafted from walnut, oak, and maple with architectural precision.
               </p>
               <div className="flex flex-col sm:flex-row gap-6">
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex-1 sm:flex-initial">
